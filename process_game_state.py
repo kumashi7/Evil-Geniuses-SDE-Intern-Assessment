@@ -1,7 +1,4 @@
 import pandas as pd
-from shapely.geometry import Point
-from shapely.geometry.polygon import Polygon
-
 
 class ProcessGameState:
     def __init__(self, file_path, boundary):
@@ -23,19 +20,15 @@ class ProcessGameState:
                 # add round number to data if not already in there
                 if round_num not in data:
                     data[round_num] = {}
-
                 # add player to data if not already in there
                 if columnData["player"] not in data[round_num]:
                     data[round_num][columnData["player"]] = []
-                
                 # append row to data[round_num][player]
                 data[round_num][columnData["player"]].append(columnData)
-
         # sort each round's data by tick in ascending order
         for round_num_data in data:
             for player_data in data[round_num_data]:
                 data[round_num_data][player_data].sort(key=lambda x: x["tick"])
-
         return data
 
     def load_data(self, transformed_data, output_file):
@@ -84,11 +77,23 @@ class ProcessGameState:
     
     # vertices must be consecutive
     def is_within_boundary(self, point, vertices):
-        # Extract the x and y coordinates of the point
+        # Extract the coordinates of the point
         x, y, z = point
-        new_point = Point(x, y)
-        polygon = Polygon(vertices)
-        return polygon.contains(new_point) and z >= 285 and z <= 421
+        n = len(vertices)
+        inside = False
+        
+        p1x, p1y = vertices[0]
+        for i in range(n + 1):
+            p2x, p2y = vertices[i % n]
+            if y > min(p1y, p2y):
+                if y <= max(p1y, p2y):
+                    if x <= max(p1x, p2x):
+                        if p1y != p2y:
+                            x_intercept = (y - p1y) * (p2x - p1x) / (p2y - p1y) + p1x
+                            if p1x == p2x or x <= x_intercept:
+                                inside = not inside
+            p1x, p1y = p2x, p2y
+        return inside and z >= 285 and z <= 421
     
 
 # Example usage
