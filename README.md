@@ -64,6 +64,8 @@ CounterStrike game strategies analysis on Bombsite B. Created by Mingming Zheng.
         
         To fulfill this request, multiple libraries have been imported to facilitate the creation of a heat map. The function filters the data to focus on players located within the Bombsite B area and extracts their respective x and y coordinates. It then creates a map where the keys are defined as (x, y) coordinates and the values represent the number of occurrences associated with each coordinate pair.
         
+        Based on the heatmap analysis, it is evident that when Team 2 is on the CT side, they tend to prioritize guarding the lower right area of Bombsite B. This observation aligns with the earlier finding that when they played on the T side, they rarely chose to invade from the upper left light blue area. This tendency can be attributed to the physical layout of the bombsite B, where the upper section is obstructed by walls and pillars, while the lower right area provides a more open space for defensive positioning and potential counterattacks by opponents.
+        
         Program Result:
         
         ![heat map](https://raw.githubusercontent.com/kumashi7/Evil-Geniuses-SDE-Intern-Assessment/master/heatmap.png)
