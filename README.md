@@ -109,7 +109,7 @@ CounterStrike game strategies analysis on Bombsite B. Created by Mingming Zheng.
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/kumashi7/Evil-Geniuses-SDE-Intern-Assessment.git
 ```
 
 Run game analysis file
