@@ -99,11 +99,9 @@ CounterStrike game strategies analysis on Bombsite B. Created by Mingming Zheng.
 
         I propose the development of a user-friendly interface for our backend Python file. To expedite the implementation process, we can utilize templates or libraries that offer pre-built components and functionality. Two suitable options for Python stack frameworks are Django and Flask.
 
-By incorporating a user interface, we can create portals through which the coaching staff can easily input parameters or select pre-defined options to generate the desired output. The complete stack will not only fulfill the current request but also provide scalability for potential future deployments, accommodating increased user access.
+        By incorporating a user interface, we can create portals through which the coaching staff can easily input parameters or select pre-defined options to generate the desired output. The complete stack will not only fulfill the current request but also provide scalability for potential future deployments, accommodating increased user access.
 
-To streamline backend development, it is advisable to adopt a modular approach and prioritize the implementation of core features. This approach enables us to expedite development while maintaining flexibility for accommodating new analysis requests through organized data transformations.
-
-Implementing the proposed stack for our existing product can be achieved within a timeframe of less than one week.
+        To streamline backend development, it is advisable to adopt a modular approach and prioritize the implementation of core features. This approach enables us to expedite development while maintaining flexibility for accommodating new analysis requests through organized data transformations. Implementing the proposed stack for our existing product can be achieved within a timeframe of less than one week.
 
 
 ## Run Locally
